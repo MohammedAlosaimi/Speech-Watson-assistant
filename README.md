@@ -1,4 +1,4 @@
-# Transcribe
+# Speech Watson assistant
 
 <!-- PROJECT IMAGE -->
 <p align="center">
