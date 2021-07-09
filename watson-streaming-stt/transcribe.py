@@ -230,7 +230,7 @@ def textToSpeech():
         output.writelines(textResult)
     # print("the text have been saved")
     # Get an assistant reply
-    assistant.watsonAssistantChat(textResult)
+    assistant.watsonAssistantChat()
 
 
 if __name__ == "__main__":

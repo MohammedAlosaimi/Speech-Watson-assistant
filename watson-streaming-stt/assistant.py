@@ -23,7 +23,14 @@ assistant = AssistantV2(
 # Set Service URL
 assistant.set_service_url(url)
 
-def watsonAssistantChat(text):
+def watsonAssistantChat():
+    # open the txt file and take the results
+    with open('output.txt', 'r') as out:
+        text = out.readlines()
+    
+    # combine the multi lines in one line
+    text = [line.replace('\n', '') for line in text]
+    text = ''.join(str(line) for line in text)
 
     # Response msg from the assistant service
     response = assistant.message_stateless(
@@ -37,7 +44,7 @@ def watsonAssistantChat(text):
     # change the response to a json string
     msg = json.dumps(response)
 
-    result = "Sorry, there is a problem with the response"
+    result = "Sorry, there is a response problem"
 
     # Loads the msg and the return the result.
     data = json.loads(msg)
