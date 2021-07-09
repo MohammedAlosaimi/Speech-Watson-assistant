@@ -17,7 +17,7 @@
 <!-- ABSTRACT -->
 ## Abstract
 
-This repository to communicate with [Watson Assistant](https://www.ibm.com/cloud/watson-assistant) by voice. The idea behind this repository is to convert the speech-to-text by [Watson Speech to Text](https://www.ibm.com/cloud/watson-speech-to-text) and then save it in [`output.txt`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/watson-streaming-stt/output.txt). furthermore, it takes the text in [`output.txt`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/watson-streaming-stt/output.txt) and sends it as a request to Watson Assistant. After geting the response, it converts the responce from text to speech by [Watson Text to Speech](https://www.ibm.com/cloud/watson-text-to-speech) and then saves it in [`output.mp3`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/watson-streaming-stt/output.mp3) as an mp3 file.
+This repository to communicate with [Watson Assistant](https://www.ibm.com/cloud/watson-assistant) by voice. The idea behind this repository is to convert the speech-to-text by [Watson Speech to Text](https://www.ibm.com/cloud/watson-speech-to-text) and then save it in [`output.txt`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/blob/master/watson-streaming-stt/output.txt). furthermore, it takes the text in [`output.txt`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/blob/master/watson-streaming-stt/output.txt) and sends it as a request to Watson Assistant. After geting the response, it converts the responce from text to speech by [Watson Text to Speech](https://www.ibm.com/cloud/watson-text-to-speech) and then saves it in [`output.mp3`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/blob/master/watson-streaming-stt/output.mp3) as an mp3 file.
 
 <!-- INSTALLATION -->
 ## Installation
@@ -43,7 +43,7 @@ pipwin install pyaudio
 <!-- QUICK START -->
 ## Quick Start
 
-All you need to run this program is to Install the requirements and then you can run the program from [`transcribe`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/watson-streaming-stt/transcribe.py). Note: You may need to change the `apikey` and `url` if you want to run it from your own server. Text-to-Speech from [`textospeech.py`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/watson-streaming-stt/textospeech.py) and Speech-to-Text from [`speech.cfg`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/watson-streaming-stt/speech.cfg). To use your Watson assistant, you need to change the `apikey`, `url` and `assistantId`  from [`assistant.py`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/watson-streaming-stt/assistant.py) ]
+All you need to run this program is to Install the requirements and then you can run the program from [`transcribe`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/blob/master/watson-streaming-stt/transcribe.py). Note: You may need to change the `apikey` and `url` if you want to run it from your own server. Text-to-Speech from [`textospeech.py`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/blob/master/watson-streaming-stt/textospeech.py) and Speech-to-Text from [`speech.cfg`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/blob/master/watson-streaming-stt/setup.cfg). To use your Watson assistant, you need to change the `apikey`, `url` and `assistantId`  from [`assistant.py`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/blob/master/watson-streaming-stt/assistant.py) ]
 
 ```python
 apikey = "your apikey"
@@ -55,7 +55,7 @@ assistantId = "your assistant id"
 <!-- IMPLEMENTATION -->
 ## Implementation
 
-The following code was added in [`transcribe`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/watson-streaming-stt/transcribe.py) to saving the text in a txt file and then called `watsonAssistantChat()` function from [`assistant.py`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/watson-streaming-stt/assistant.py) in order to connect with Watson Assistant and get a response. then it call `storeMP3File()` function to convert the text to speech and save the result in an mp3 file.
+The following code was added in [`transcribe`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/blob/master/watson-streaming-stt/transcribe.py) to saving the text in a txt file and then called `watsonAssistantChat()` function from [`assistant.py`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/blob/master/watson-streaming-stt/assistant.py) in order to connect with Watson Assistant and get a response. then it call `storeMP3File()` function to convert the text to speech and save the result in an mp3 file.
 
 ```python
 def textToSpeech():
@@ -67,7 +67,7 @@ def textToSpeech():
     assistant.watsonAssistantChat()
 ```
 
-The following code is in [`assiatant.py`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/watson-streaming-stt/assistant.py). It is used to open a txt file to send a request to Watson Assistan and then call `storeMP3File()` to convert the response to speech by Watson Text to Speech and then save it as an mp3 file. After that, the `system` will play the mp3 file.
+The following code is in [`assiatant.py`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/blob/master/watson-streaming-stt/assistant.py). It is used to open a txt file to send a request to Watson Assistan and then call `storeMP3File()` to convert the response to speech by Watson Text to Speech and then save it as an mp3 file. After that, the `system` will play the mp3 file.
 
 ```python
 def watsonAssistantChat():
@@ -111,7 +111,7 @@ def watsonAssistantChat():
     print("* done playing reply")
 ```
 
-The following code is in [`textospeech.py`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/watson-streaming-stt/textospeech.py). It is used to convert the text to speech by Watson Text to Speech and then save it as an mp3 file.
+The following code is in [`textospeech.py`](https://github.com/MohammedAlosaimi/Speech-Watson-assistant/blob/master/watson-streaming-stt/textospeech.py). It is used to convert the text to speech by Watson Text to Speech and then save it as an mp3 file.
 
 ```python
 def storeMP3File(text):
