@@ -15,10 +15,7 @@ tts = TextToSpeechV1(
 tts.set_service_url(url)
 
 
-def storeMP3File():
-    # open the txt file and take the results
-    with open('output.txt', 'r') as out:
-        text = out.readlines()
+def storeMP3File(text):
 
     # combine the multi lines in one line
     text = [line.replace('\n', '') for line in text]
