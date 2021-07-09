@@ -28,6 +28,9 @@ from websocket._abnf import ABNF
 # This class to convert the text to speech and then store it in mp3 file
 import textospeech
 
+#This class to connect to the assistant service
+import assistant
+
 # this import to play the mp3 file
 import os
 
@@ -228,11 +231,14 @@ def main():
     ws.run_forever()
 
 def textToSpeech():
+    # Get an assistant reply
+    assistantResult = assistant.watsonAssistantChat(textResult)
     # Add this function, so it can save the results in txt file
     with open('output.txt', 'w') as output:
-        output.writelines(textResult)
+        output.writelines(assistantResult)
     # print("the text have been saved")
     # Convert the text to speech and then store it in mp3 file
+    print("* Play the assistan reply")
     textospeech.storeMP3File()
 
     os.system('output.mp3')

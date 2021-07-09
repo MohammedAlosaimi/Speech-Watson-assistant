@@ -34,7 +34,10 @@ def watsonAssistantChat(text):
     # Loads the msg and the return the result.
     data = json.loads(msg)
     if "output" in data:
-        return data['output']['generic'][0]['text']
+        result = data['output']['generic'][0]['text']
+        print("* Assistant reply")
+        print(result)
+        return result
     else:
         return "Sorry, there is a problem with the response"
 
